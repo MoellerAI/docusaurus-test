@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  docusaurus:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000" # Map container's port 3000 to host's port 3000
+    volumes:
+      - .:/app # Mount your project directory to the container for live updates
+    stdin_open: true # Optional, keeps the container open
+    tty: true # Optional, allows interactive debugging
